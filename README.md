@@ -18,6 +18,9 @@ You can install the current version of `MRlap` with:
 ``` r
 # Directly install the package from github
 # install.packages("remotes")
+# if use MRlap internal testing data
+remotes::install_github("n-mounier/MRlap")
+# install MRlapPro
 remotes::install_github("flash0926/MRlapPro")
 ```
 
