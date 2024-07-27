@@ -25,7 +25,7 @@ remotes::install_github("flash0926/MRlapPro")
 ```
 
 ## 例子
-`` r
+``` r
 BMI <- system.file("data/", "BMI_Data.tsv.gz", package="MRlap")
 SBP <- system.file("data/", "SBP_Data.tsv.gz", package="MRlap")
 A = MRlapPro::MRlap(exposure = BMI,
@@ -34,7 +34,7 @@ A = MRlapPro::MRlap(exposure = BMI,
           outcome_name = "SBP_100Ksample",
           ld = system.file("Data/eur_w_ld_chr", package="MRlapPro"),
           hm3 = system.file("Data/eur_w_ld_chr", "w_hm3.snplist", package="MRlap"))
-``
+```
 
 
 ## 引用
