@@ -94,17 +94,17 @@ run_LDSC <- function(exposure_data,
   # exposure_munge.log
   # exposure.sumstats.gz
   if(save_logfiles){
-    file.remove(paste0(exposure_name, c(".tsv", ".sumstats.gz")))
+    file.remove(paste0(exposure_name, c(".sumstats.gz")))
   } else {
-    file.remove(paste0(exposure_name, c(".tsv", "_munge.log", ".sumstats.gz")))
+    file.remove(paste0(exposure_name, c("_munge.log", ".sumstats.gz")))
   }
   # outcome.tsv
   # outcome_munge.log
   # outcome.sumstats.gz
   if(save_logfiles){
-    file.remove(paste0(outcome_name, c(".tsv", ".sumstats.gz")))
+    file.remove(paste0(outcome_name, c(".sumstats.gz")))
   } else {
-    file.remove(paste0(outcome_name, c(".tsv", "_munge.log", ".sumstats.gz")))
+    file.remove(paste0(outcome_name, c("_munge.log", ".sumstats.gz")))
   }
   # exposure.sumstats.gz_outcome.sumstats.gz_ldsc.log
   if(!save_logfiles) file.remove(paste0(c(traits, "ldsc.log"), collapse="_"))

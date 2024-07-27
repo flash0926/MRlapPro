@@ -256,16 +256,16 @@ MRlap <- function(exposure,
                     list("polygenicity" = pi_x,
                          "perSNP_heritability" = sigma2_x))
 
-  #增加表头 调整表头
+  #add id.exposure id.outcome
   results_MR$id.exposure = exposure_name
   results_MR$id.outcome = outcome_name
-  results_MR <- results_MR %>% select(id.exposure, id.outcome, everything())
+  #results_MR <- results_MR %>% select(id.exposure, id.outcome, everything())
   results_LDSC$id.exposure = exposure_name
   results_LDSC$id.outcome = outcome_name
-  results_LDSC <- results_LDSC %>% select(id.exposure, id.outcome, everything())
+  #results_LDSC <- results_LDSC %>% select(id.exposure, id.outcome, everything())
   results_GeneticArchitecture$id.exposure = exposure_name
   results_GeneticArchitecture$id.outcome = outcome_name
-  results_GeneticArchitecture <- results_GeneticArchitecture %>% select(id.exposure, id.outcome, everything())
+  #results_GeneticArchitecture <- results_GeneticArchitecture %>% select(id.exposure, id.outcome, everything())
 
   results = list(MRcorrection = results_MR,
                  LDSC = results_LDSC,
