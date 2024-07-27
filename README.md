@@ -44,6 +44,7 @@ A
 - 所以需要按照IEU提供的文档，进行Token配置，否则无法使用其功能。
 - 也可以使用本地clump功能，查看包体参数说明传入plink以及bfile的文件。
 可以下载网页中提供的LD.zip文件 解压到自己的工作目录使用
+https://kimfiles.oss-cn-beijing.aliyuncs.com/LD.zip
 
 ## 引用
 
