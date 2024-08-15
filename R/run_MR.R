@@ -27,9 +27,11 @@ run_MR <- function(exposure_data,
                    MR_plink = NULL,
                    MR_bfile = NULL,
                    verbose = TRUE){
-
+  # limit pval first.If there are too many rows, dplyr:: innerjoining will become invalid.
+  filtered_exposure_data <- exposure_data %>% dplyr::filter(p < MR_threshold)
+  filtered_outcome_data <- outcome_data %>% dplyr::filter(p < MR_threshold)
   # here we need to join exposure and outcome data (merge only based on rsid - chr/pos are optional)
-  data <- dplyr::inner_join(exposure_data, outcome_data, by=c("rsid"), suffix=c(".exp", ".out"))
+  data <- dplyr::inner_join(filtered_exposure_data, filtered_outcome_data, by=c("rsid"), suffix=c(".exp", ".out"))
   # and we need to make sure alleles are aligned!
   data %>%
     dplyr::mutate(std_beta.out = dplyr::case_when(
