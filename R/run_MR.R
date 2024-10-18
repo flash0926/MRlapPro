@@ -32,6 +32,10 @@ run_MR <- function(exposure_data,
   # here we need to join exposure and outcome data (merge only based on rsid - chr/pos are optional)
   data <- dplyr::inner_join(filtered_exposure_data, outcome_data, by=c("rsid"), suffix=c(".exp", ".out"))
   # and we need to make sure alleles are aligned!
+  data$alt.exp <- toupper(data$alt.exp)
+  data$alt.out <- toupper(data$alt.out)
+  data$ref.exp <- toupper(data$ref.exp)
+  data$ref.out <- toupper(data$ref.out)
   data %>%
     dplyr::mutate(std_beta.out = dplyr::case_when(
       alt.exp == alt.out & ref.exp == ref.out ~ std_beta.out, # aligned
